@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Document</title>
+</head>
+<body>
+  <h1>Enter a New flight</h1>
+  <form action="/flights" method="POST">
+    <label>Airline
+      <input type="text" name="airline">
+    </label><br>
+    <label>Airport
+      <input type="text" name="airport">
+    </label><br>
+    <label>Destination:
+      <input type="text" name="destination">
+    </label><br>
+    <label>Departure Date 
+      <input type="date" name="departureDate">
+    </label><br>
+    <label>Departure Time
+      <input type="time" name="departureTime">
+    </label><br>
+    <label>Flight risk 
+      <select name="flightRisk">
+        <option value="fine">Fine</option>
+        <option value="risky as usual">A bit of risk</option>
+        <option value="more risky than usual">quite a bit of risk</option>
+        <option value="Death imminent">Your're gonna die</option>
+      </select>
+    </label><br>
+    <label>Flight Number:
+      <input type="text" name="flightNo">
+    </label><br>
+    <label>On Time:
+      <input type="checkbox" name="onTime" checked>
+    </label><br>
+    <button type="submit">Add Flight</button>
+  </form>
+</body>
+</html>
