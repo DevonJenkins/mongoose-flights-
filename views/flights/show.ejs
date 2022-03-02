@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/movies/show.css" />
+<link rel="stylesheet" href="/stylesheets/style.css" />
 <%- include('../partials/nav') %>
 
 <main>
@@ -14,6 +14,43 @@
       <div><%= flight.destination %></div>
       <div><%= flight.onTime ? 'yep' : 'nope' %></div>
   </section>
+</section>
+<% // new markup below %>
+<h2>tickets</h2>
+<form 
+  id="add-Ticket-form"
+  action="/flights/<%= flight._id %>/tickets"
+  method="POST"
+>
+  <label for="name-input">Ticket Holder:</label>
+  <input name="name" id="name-input" placeholder="First-Name Last-Name"></input>
+  <label for="seat-select">Seat:</label>
+  <input name="seat" required pattern="[A-F][1-9]\d?" placeholder="A-F 1-99">
+  <button type="submit">Add Ticket</button>
+</form>
+
+<% if (flight.tickets.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Seat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% flight.tickets.forEach(function(ticket) { %>
+        <tr>
+          <td><%= ticket.createdAt.toLocaleDateString() %></td>
+          <td><%= ticket.name %></td>
+          <td><%= ticket.seat %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h3>No Tickets Yet</h3>
+<% } %>
 </main>
   
 <%- include('../partials/footer') %>

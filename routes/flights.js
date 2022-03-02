@@ -8,11 +8,14 @@ router.get('/', flightsCtrl.index)
 //Get flights/new
 router.get('/new', flightsCtrl.new)
 //POST /flights
-router.post('/', flightsCtrl.create)
-
 router.get('/:id', flightsCtrl.show)
 
+router.post('/', flightsCtrl.create)
+router.post('/:id/:tickets', flightsCtrl.createTicket)
+
 router.delete("/:id", flightsCtrl.delete)
+
+
 
 
 

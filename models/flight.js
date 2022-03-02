@@ -4,6 +4,13 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema
 
+const ticketSchema = new Schema({
+  name: String,
+  seat: {type: String, match: /[A-F][1-9]\d?/}
+},{
+  timestamps: true
+})
+
 const flightSchema = new Schema({
     airline: String,
     airport: String,
@@ -13,7 +20,12 @@ const flightSchema = new Schema({
     flightRisk: String,
     destination: String,
     onTime: Boolean,
+    tickets: [ticketSchema]},{
+      timestamps: true
+
 })
+
+
 
 //Compile flights schema into a model and then export it
 const Flight = mongoose.model('Flight', flightSchema)
