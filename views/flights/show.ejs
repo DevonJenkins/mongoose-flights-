@@ -14,7 +14,7 @@
       <div><%= flight.destination %></div>
       <div><%= flight.onTime ? 'yep' : 'nope' %></div>
 <%# start meal list %>
-<div>Meals:</div>
+<div>Meals:
 <ul>
   <% flight.meals.forEach(meal => { %>
     <li><%= meal.name %> </li>
@@ -22,6 +22,22 @@
   <%});%>
 <%# end meal list %> 
 
+
+<form id="add-per-to-meal" 
+      action="/flights/<%= flight._id %>/meals" 
+      method="POST">
+  <select name="mealId">
+    <% meals.forEach(meal => { %>
+      <option value="<%= meal._id %>"><%= meal.name %></option>
+      <tr>
+      </tr>
+
+    <% }) %>
+  </select>
+  <button type="submit">Add to Menu</button>
+  
+</form>
+</div>
 </section>
 
 <%# add to meal form below this comment %> 
@@ -42,6 +58,7 @@
   <button type="submit">Add Ticket</button>
 </form>
 
+<section>
 <% if (flight.tickets.length) { %>
   <table>
     <thead>
@@ -64,17 +81,9 @@
 <% } else { %>
   <h3>No Tickets Yet</h3>
 <% } %>
+</section>
 
 
-
-<form id="add-per-to-meal" action="/flights/<%= flight._id %>/meals" method="POST">
-  <select name="mealId">
-    <% meals.forEach(meal => { %>
-      <option value="<%= meal._id %>"><%= meal.name %></option>
-    <% }) %>
-  </select>
-  <button type="submit">Add to Menu</button>
-</form>
 
 
 </main>
