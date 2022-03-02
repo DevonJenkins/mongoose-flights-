@@ -12,6 +12,23 @@ a {
   color: #00B7FF;
 }
 
+nav{
+  background: gray;
+  font-size: x-large;
+  padding: 10px; 
+  display: flex;
+  justify-content: left;
+
+}
+
+nav>i{
+  padding-left: 20px;
+
+}
+nav>a{
+  padding-left: 20px;
+}
+
 table{
   margin-left: auto;
   margin-right: auto;

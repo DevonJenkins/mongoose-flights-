@@ -13,18 +13,25 @@
       <div><%= flight.flightRisk%></div>
       <div><%= flight.destination %></div>
       <div><%= flight.onTime ? 'yep' : 'nope' %></div>
+<%# start meal list %>
+
+<%# end meal list %> 
+
+<%# add to meal form below this comment %> 
+
   </section>
-</section>
-<% // new markup below %>
-<h2>tickets</h2>
+
+<h2>Tickets</h2>
 <form 
   id="add-Ticket-form"
   action="/flights/<%= flight._id %>/tickets"
   method="POST"
 >
-  <label for="name-input">Ticket Holder:</label>
+  <label for="name-input">Ticket Holder:
+  </label>
   <input name="name" id="name-input" placeholder="First-Name Last-Name"></input>
-  <label for="seat-select">Seat:</label>
+  <label for="seat-select">Seat:
+  </label>
   <input name="seat" required pattern="[A-F][1-9]\d?" placeholder="A-F 1-99">
   <button type="submit">Add Ticket</button>
 </form>

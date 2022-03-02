@@ -10,6 +10,9 @@ function newFlight(req,res){
 
 function create(req, res){
   req.body.onTime = !!req.body.onTime 
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
 
   const flight = new Flight(req.body)
   console.log(flight)
