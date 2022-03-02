@@ -20,9 +20,11 @@ const flightSchema = new Schema({
     flightRisk: String,
     destination: String,
     onTime: Boolean,
-    tickets: [ticketSchema]},{
+    
+    tickets: [ticketSchema],
+    meals: [{type: Schema.Types.ObjectId, ref: 'Meal'}],},
+    {
       timestamps: true
-
 })
 
 
