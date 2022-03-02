@@ -28,11 +28,15 @@
           <td><%= flight.flightRisk%></td>
           <td><%= flight.destination %></td>
           <td><%= flight.onTime ? 'yep' : 'nope' %></td>
+          <td><a href="/flights/<%= flight._id %>">DETAILS</a></td>
+          <td>
+          <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
+            <button>X</button>
+          </td>
         </tr>
       <% }) %>
     </tbody>
   </table>
-  <a href="/flights/new">Add a flight</a>
 </main>
 
   <%- include('../partials/footer') %> 
