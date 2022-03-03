@@ -3,8 +3,8 @@ body {
   background: #d1e3dd;
   color: #5762D5;
   text-align: center;
-  justify-content: center;
-  margin: 0 auto;
+  align-items: center;
+  margin: 0;
 }
 
 a {
@@ -45,6 +45,7 @@ table{
   border-collapse:collapse;
   border:1px solid #32292F;
   border-radius: 12%;
+  
 
   }
   
@@ -63,15 +64,17 @@ table{
     color:#6E7DAB;
     background: #00B7FF
   }
-  form>input{
+  input{
     background: #6E7DAB;
     color: #D1E3DD;
-    
+    border-radius: 5px;
+    margin-top: 3px;
+
   }
-  form>options{
+  select {
     background: #6E7DAB;
     color: #D1E3DD;
-    
+    margin-top: 3px;
   }
 
   ::placeholder{

@@ -53,13 +53,13 @@ table{
   }
  
 
-  form>input{
+  input{
     background: #6E7DAB;
     color: #D1E3DD;
- 
+    border-radius: 5px;
     
   }
-  form>options{
+  options{
     background: #6E7DAB;
     color: #D1E3DD;
     
