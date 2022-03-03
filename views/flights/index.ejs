@@ -11,8 +11,6 @@
         <th>Airport</th>
         <th>Flight-No.</th>
         <th>Dept.date</th>
-        <th>Dept.time</th>
-        <th>Flight Risk</th>
         <th>Destination</th>
         <th>On Time</th>
       </tr>
@@ -24,11 +22,9 @@
           <td><%= flight.airport %></td>
           <td><%= flight.flightNo %></td>
           <td><%= flight.departureDate %></td>
-          <td><%= flight.departureTime %></td>
-          <td><%= flight.flightRisk%></td>
           <td><%= flight.destination %></td>
           <td><%= flight.onTime ? 'yep' : 'nope' %></td>
-          <td><a href="/flights/<%= flight._id %>">TICKETS</a></td>
+          <td><a href="/flights/<%= flight._id %>">DETAILS</a></td>
           <td>
           <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
             <button>X</button>

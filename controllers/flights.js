@@ -21,7 +21,7 @@ function create(req, res){
   flight.save(function(err){
     if (err) return res.redirect('flights/new')
 
-  res.redirect(`/flights/${meal._id}`)
+  res.redirect(`/flights/${flight._id}`)
 })
 }
 
@@ -74,12 +74,18 @@ function addToMenu(req, res){
   })
 }
 
+function deleteTicket(req, res) {
+  flight.ticket.findByIdAndDelete(req.params.id, function(err, ticket){
+    res.redirect(`/flights/${flight._id}`)
+  })
+}
+
 export {
   newFlight as new,
   create,
   index,
   show,
-  deleteFlight as delete,
+  deleteFlight, deleteTicket as delete,
   createTicket,
   addToMenu
 }
