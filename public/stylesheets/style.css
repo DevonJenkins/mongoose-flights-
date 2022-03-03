@@ -62,7 +62,8 @@ table{
   }
   button:hover{
     color:#6E7DAB;
-    background: #00B7FF
+    background: #00B7FF;
+    cursor: pointer;
   }
   input{
     background: #6E7DAB;
