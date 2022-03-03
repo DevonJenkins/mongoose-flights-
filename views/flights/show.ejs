@@ -24,10 +24,6 @@
           <td><%= flight.departureDate %></td>
         </tr>
         <tr>
-          <td>Destination</td>
-          <td><%= flight.destination %></td>
-        </tr>
-        <tr>
           <td>On Time</td>
           <td name="on-time" ><%= flight.onTime ? 'yep' : 'nope' %></td>
         </tr>
@@ -55,7 +51,8 @@
 
 <form id="add-meal-to-flight" 
       action="/flights/<%= flight._id %>/meals" 
-      method="POST">
+      method="POST"
+      autocomplete="off">
 
   <select name="mealId">
     <% meals.forEach(meal => { %>
@@ -79,6 +76,7 @@
   id="add-ticket-form"
   action="/flights/<%= flight._id %>/tickets"
   method="POST"
+  autocomplete="off"
 >
   <label for="name-input">Ticket Holder:
   </label>

@@ -82,7 +82,7 @@ form * {
   font-size: 2rem;
 }
 
-form > button {
+button {
   font-size: 1.6rem;
   width: 16rem;
   grid-column: 2 / 3;

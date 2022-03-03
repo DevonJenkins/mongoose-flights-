@@ -4,7 +4,7 @@
 <main>
 <body>
   <h1>Enter a New flight</h1>
-  <form action="/flights" method="POST">
+  <form autocomplete="off" action="/flights" method="POST">
     <label>Airline
       <input type="text" name="airline">
     </label><br>
@@ -21,8 +21,6 @@
 
 
     </label><br>
-    <label>Destination:
-      <input type="text" name="destination">
     </label><br>
     <label>Departure Date 
       <input type="date" name="departureDate">
