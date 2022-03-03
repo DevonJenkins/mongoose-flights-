@@ -85,7 +85,7 @@ export {
   create,
   index,
   show,
-  deleteFlight, deleteTicket as delete,
+  deleteFlight as delete,
   createTicket,
   addToMenu
 }

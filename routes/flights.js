@@ -15,7 +15,8 @@ router.post('/:id/meals', flightsCtrl.addToMenu)
 router.post('/:id/:tickets', flightsCtrl.createTicket)
 
 router.delete("/:id", flightsCtrl.delete)
-router.delete("/:id/:tickets", flightsCtrl.delete)
+//The delete below doesn't want to work. I'll need some help with this
+//router.delete("/:id/:tickets", flightsCtrl.delete)
 
 
 

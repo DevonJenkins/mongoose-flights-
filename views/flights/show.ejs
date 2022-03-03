@@ -4,23 +4,53 @@
 
 <main>
   <h1><%= title %></h1>
-  <section>
-      <div><%= flight.airline %></div>
-      <div><%= flight.airport %></div>
-      <div><%= flight.flightNo %></div>
-      <div><%= flight.departureDate %></div>
-      <div><%= flight.departureTime %></div>
-      <div><%= flight.destination %></div>
-      <div><%= flight.onTime ? 'yep' : 'nope' %></div>
-<%# start meal list %>
-<div>Meals:</div>
-<ul>
-  <% flight.meals.forEach(meal => { %>
-    <li><%= meal.name %> </li>
-    <%})%>
-</ul>
-<%# end meal list %> 
+  <section id="flight details">
+    <table>
+      <thead>
+        <tr>
+          <td>Airline</td>
+          <td><%= flight.airline %></td>
+        </tr>
+        <tr>
+          <td>Airport</td>
+          <td><%= flight.airport %></td>
+        </tr>
+        <tr>
+          <td>Flight No.</td>
+          <td><%= flight.flightNo %></td>
+        </tr>
+        <tr>
+          <td>Departure Date</td>
+          <td><%= flight.departureDate %></td>
+        </tr>
+        <tr>
+          <td>Destination</td>
+          <td><%= flight.destination %></td>
+        </tr>
+        <tr>
+          <td>On Time</td>
+          <td name="on-time" ><%= flight.onTime ? 'yep' : 'nope' %></td>
+        </tr>
+      </tr>
+      </thead>  
+          <%# start meal list %>
+          
+        
+  </table>
   </section>
+
+
+  <label for="meals">Meals:</label>
+          <ul name="meals">
+            <% if (flight.meals.length){ %> 
+            <% flight.meals.forEach(meal => { %>
+              <li><%= meal.name %> 
+              <%})%></li>
+              <%}else{ %>
+            <h3>No Meals Added</h3>
+          <% } %> 
+        </ul>
+        <%# end meal list %>
 
 
 <form id="add-meal-to-flight" 

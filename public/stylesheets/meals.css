@@ -1,38 +1,73 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: black;
-  color: rgb(105, 131, 214);
+  background: #d1e3dd;
+  color: #5762D5;
   text-align: center;
   justify-content: center;
   margin: 0 auto;
 }
 
 a {
-  color: #00B7FF;
+  color: #6E7DAB;
+
+}
+
+a:link{
+  text-decoration: none;
+}
+a:hover{
+  color:#6E7DAB;
+  background: #00B7FF;
 }
 
 nav{
-  background: gray;
+  background: #575366;
   font-size: x-large;
-  padding: 10px; 
+  padding: 10px 0px 10px 0px;
   display: flex;
   justify-content: left;
 
 }
 
 nav>i{
-  padding-left: 20px;
+  margin-left: 20px;
 
 }
 nav>a{
-  padding-left: 20px;
+  margin-left: 20px;
+  padding: 5px;
 }
+
 
 table{
   margin-left: auto;
   margin-right: auto;
-}
+  border-collapse:collapse;
+  border:1px solid #32292F;
+  border-radius: 12%;
+
+  }
+  
+  table td{
+  border:1px solid #32292F;
+  }
+ 
+
+  form>input{
+    background: #6E7DAB;
+    color: #D1E3DD;
+ 
+    
+  }
+  form>options{
+    background: #6E7DAB;
+    color: #D1E3DD;
+    
+  }
+
+  ::placeholder{
+    color: black;
+  }
 
 form {
   display: grid;
@@ -52,4 +87,14 @@ form > button {
   width: 16rem;
   grid-column: 2 / 3;
   margin-bottom: 2.4rem;
+  padding: 3px;
+  background: #5762D5;
+  border-radius: 5px;
+  border: #32292F solid 1px;
+  color:#32292F;
+}
+
+button:hover{
+  color:#6E7DAB;
+  background: #00B7FF
 }
